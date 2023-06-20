@@ -8,6 +8,9 @@ services:
     volumes: 
       - ./src:/var/www/html
       - ./nginx/nginx.conf:/etc/nginx/config.d/default.conf:ro # /etc/nginx/config.d/default.conf: is a special file which will be merge on a biiger nginx config inside nginx image
+    depends_on:
+      - php
+      - mysql
 
   php:
     build: 

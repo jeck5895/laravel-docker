@@ -3,6 +3,7 @@
 `docker-compose run --rm composer create-project laravel/laravel .` (. - means it will install on the src folder (bind mount configured in docker-compose))
 
 ### RUN all services except utility container (compose)
-- run `docker-compose up -d server php msql` 
+- run `docker-compose up -d server php mysql` 
+- or `docker-compose up -d server` when adding `depends_on` in server compose instructions
 - -d : detach mode
 - server, php, mysql are service names
