@@ -17,10 +17,10 @@ services:
 
   php:
     build: 
-      context: ./dockerfiles
-      dockerfile: php.dockerfile
-    #volumes: # Uncomment this on development to reflect local changes to container
-    #  - ./src:/var/www/html:delegated # delegated - means it's not copy immediately
+      context: .
+      dockerfile: dockerfiles/php.dockerfile
+    volumes: # uncomment this on development to reflect local changes to container
+      - ./src:/var/www/html:delegated # delegated - means it's not copy immediately
       
   mysql:
     image: mysql:5.7
